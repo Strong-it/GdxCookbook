@@ -1,29 +1,18 @@
 package com.libgdx.cookbook.chp02;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
+import com.libgdx.cookbook.help.BaseScreen;
 import com.libgdx.cookbook.help.HelpCamera;
 
-public class SpriteBatchSample implements Screen {
+public class SpriteBatchSample extends BaseScreen {
 	final String TAG = SpriteBatchSample.class.getSimpleName();
 	
-	private static final Color BACKGROUND_COLOR = new Color(0.39f, 0.58f, 0.92f, 1.0f);
-	private static final float WORLD_TO_SCREEN = 1.0f / 100.0f;
-	private static final float SCREEN_WIDTH = 12.80f;
-	private static final float SCREEN_HEIGHT = 7.20f;
-	
-	private OrthographicCamera camera;
-	private HelpCamera helpCamera;
-	private Viewport viewport;
-	private SpriteBatch batch;
 	private Texture cavemanTexture;
 	
 	private int width, height;
@@ -31,7 +20,6 @@ public class SpriteBatchSample implements Screen {
 	
 	@Override
 	public void show() {
-		Gdx.app.log(TAG, "show");
 		camera = new OrthographicCamera();
 		helpCamera = new HelpCamera(camera);
 		viewport = new FitViewport(SCREEN_WIDTH, SCREEN_HEIGHT, camera);
@@ -70,29 +58,12 @@ public class SpriteBatchSample implements Screen {
 
 	@Override
 	public void resize(int width, int height) {
-		viewport.update(width, height, false);
-		Gdx.app.log(TAG, "now camera positon is x=" + camera.position.x
-				+ "  y=" + camera.position.y + "  z=" + camera.position.z);
-	}
-
-	@Override
-	public void pause() {
-		Gdx.app.log(TAG, "pause");
-	}
-
-	@Override
-	public void resume() {
-		Gdx.app.log(TAG, "resume");
-	}
-
-	@Override
-	public void hide() {
-		Gdx.app.log(TAG, "hide");
+		// 将所有的resize都交给basescreen来处理
+		super.resize(width, height);
 	}
 
 	@Override
 	public void dispose() {
-		Gdx.app.log(TAG, "dispose");
 		batch.dispose();
 		cavemanTexture.dispose();
 	}
