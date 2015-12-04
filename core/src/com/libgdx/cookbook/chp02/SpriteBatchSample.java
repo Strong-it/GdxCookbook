@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.libgdx.cookbook.help.BaseScreen;
-import com.libgdx.cookbook.help.HelpCamera;
+import com.libgdx.cookbook.help.DebugTool;
 
 public class SpriteBatchSample extends BaseScreen {
 	final String TAG = SpriteBatchSample.class.getSimpleName();
@@ -21,7 +21,7 @@ public class SpriteBatchSample extends BaseScreen {
 	@Override
 	public void show() {
 		camera = new OrthographicCamera();
-		helpCamera = new HelpCamera(camera);
+		debugTool = new DebugTool(camera);
 		viewport = new FitViewport(SCREEN_WIDTH, SCREEN_HEIGHT, camera);
 		batch = new SpriteBatch();
 		
@@ -41,6 +41,7 @@ public class SpriteBatchSample extends BaseScreen {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 		batch.setProjectionMatrix(camera.combined);  // 设置batch的camera的正交投影
+		debugTool.drawGrid(SCREEN_WIDTH, SCREEN_HEIGHT);  // 画出表格来确定人物所在的位置
 		
 		batch.begin();
 		batch.draw(cavemanTexture,   // texture本身
@@ -52,8 +53,9 @@ public class SpriteBatchSample extends BaseScreen {
 					0, 0,      // srcX, srcY  Texture本身的起始位置
 					width, height,  // Texture的宽和高,如果width / 2,那么人物只能画出一般
 					false, false);  //flipX, flipY  是否X轴翻转， 是否Y轴翻转
-		helpCamera.operateCamera();
+		debugTool.operateCamera();
 		batch.end();
+		
 	}
 
 	@Override
@@ -61,11 +63,13 @@ public class SpriteBatchSample extends BaseScreen {
 		// 将所有的resize都交给basescreen来处理
 		super.resize(width, height);
 	}
-
+	
 	@Override
-	public void dispose() {
+	public void hide() {
+		super.hide();
 		batch.dispose();
 		cavemanTexture.dispose();
+		debugTool.dispose();
 	}
 
 }

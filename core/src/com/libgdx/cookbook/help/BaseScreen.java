@@ -5,7 +5,6 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 /**
@@ -21,7 +20,7 @@ public abstract class BaseScreen implements Screen {
 	public static final float SCREEN_HEIGHT = 7.20f;
 	
 	public OrthographicCamera camera;
-	public HelpCamera helpCamera;
+	public DebugTool debugTool;
 	public Viewport viewport;
 	public SpriteBatch batch;
 	
