@@ -37,7 +37,6 @@ public class SpriteBatchSample extends BaseScreen {
 		
 		originX = width * 0.5f;
 		originY = height * 0.5f;
-		Gdx.app.log(TAG, ""+originX);
 	}
 
 	@Override
