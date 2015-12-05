@@ -1,6 +1,8 @@
 package com.libgdx.cookbook.chp02;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -14,14 +16,21 @@ import com.libgdx.cookbook.help.DebugTool;
 public class SpriteBatchSample extends BaseScreen {
 	final String TAG = SpriteBatchSample.class.getSimpleName();
 	
+	private Game game;
 	private Texture cavemanTexture;
 	private Color oldColor;
 	
 	private int width, height;
 	private float originX, originY;
 	
+	public SpriteBatchSample(Game game) {
+		Gdx.app.log(TAG, "constructor");
+		this.game = game;
+	}
+	
 	@Override
 	public void show() {
+		Gdx.app.log(TAG, "show");
 		camera = new OrthographicCamera();
 		debugTool = new DebugTool(camera);
 		viewport = new FitViewport(SCREEN_WIDTH, SCREEN_HEIGHT, camera);
@@ -108,7 +117,12 @@ public class SpriteBatchSample extends BaseScreen {
 		
 		batch.setColor(oldColor);
 		debugTool.operateCamera();
+		
 		batch.end();
+		
+		if (Gdx.input.isKeyJustPressed(Keys.G)) {
+			gotoScreen();
+		}
 		
 	}
 
@@ -120,10 +134,13 @@ public class SpriteBatchSample extends BaseScreen {
 	
 	@Override
 	public void hide() {
-		super.hide();
+		Gdx.app.log(TAG, "hide");
 		batch.dispose();
 		cavemanTexture.dispose();
 		debugTool.dispose();
 	}
 
+	private void gotoScreen() {
+		game.setScreen(new TextureAtlasSample(game));
+	}
 }

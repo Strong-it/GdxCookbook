@@ -2,6 +2,7 @@ package com.libgdx.cookbook;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.libgdx.cookbook.chp02.TextureAtlasSample;
 import com.libgdx.cookbook.help.SampleList;
 
 public class GdxCookbook extends Game {
@@ -18,9 +19,10 @@ public class GdxCookbook extends Game {
 			sampleName[i] = SampleList.sampleList.get(i).getSimpleName();
 		}
 		// TODO: 以后学习UI部分之后做一个List
-		Gdx.app.log(TAG, "class" + SampleList.newSample("TextureAtlasSample")); // 这是获取一个对象,后面会带@字符串
-		Gdx.app.log(TAG, "class" + SampleList.sampleList.get(1));                // 这是获取一个类
-		setScreen(SampleList.newSample("TextureAtlasSample"));
+		//Gdx.app.log(TAG, "class" + SampleList.newSample("TextureAtlasSample")); // 这是获取一个对象,后面会带@字符串
+		//Gdx.app.log(TAG, "class" + SampleList.sampleList.get(1));                // 这是获取一个类
+//		setScreen(SampleList.newSample("TextureAtlasSample"));
+		setScreen(new TextureAtlasSample(this));
 	}
 
 	@Override

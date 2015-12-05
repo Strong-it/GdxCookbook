@@ -53,7 +53,7 @@ public abstract class BaseScreen implements Screen {
 
 	@Override
 	public void hide() {
-		Gdx.app.log(TAG, "hide");
+		
 	}
 
 	@Override
