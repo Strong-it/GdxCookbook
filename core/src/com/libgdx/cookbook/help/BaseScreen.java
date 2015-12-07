@@ -1,6 +1,7 @@
 package com.libgdx.cookbook.help;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -9,9 +10,9 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 /**
  * 增加BaseScreen 将screen用到的数据都放在这里
- *
+ * 后面一些screen可能会用到touch函数，因此此处继承InputAdapter
  */
-public abstract class BaseScreen implements Screen {
+public abstract class BaseScreen extends InputAdapter implements Screen {
 	private final String TAG = BaseScreen.class.getSimpleName();
 	
 	public static final Color BACKGROUND_COLOR = new Color(0.39f, 0.58f, 0.92f, 1.0f);

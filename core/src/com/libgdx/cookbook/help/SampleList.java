@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.reflect.ClassReflection;
 import com.badlogic.gdx.utils.reflect.ReflectionException;
 import com.libgdx.cookbook.chp02.SpriteBatchSample;
 import com.libgdx.cookbook.chp02.TextureAtlasSample;
+import com.libgdx.cookbook.chp02.ViewportSample;
 
 /****
  * 列举出所有的SampleList，然后在第一个页面展示
@@ -20,7 +21,8 @@ public class SampleList {
 	@SuppressWarnings("unchecked")
 	public static final List<Class< ? extends BaseScreen>> sampleList = new ArrayList<Class< ? extends BaseScreen>>(Arrays.asList(
 	 				SpriteBatchSample.class,
-	 				TextureAtlasSample.class
+	 				TextureAtlasSample.class,
+	 				ViewportSample.class
 	 				));
 	
 	public List<String> getNames() {
