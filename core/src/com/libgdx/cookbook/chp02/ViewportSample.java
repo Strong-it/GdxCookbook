@@ -72,6 +72,14 @@ public class ViewportSample extends BaseScreen {
     @Override
     public void resize(int width, int height) {
         viewports.getValueAt(currentViewport).update(width, height);
+        Gdx.app.log(TAG, "viewportWidth= " + viewports.getValueAt(currentViewport).getScreenWidth() +
+                "  viewportHeight= " + viewports.getValueAt(currentViewport).getScreenHeight());
+        Gdx.app.log(TAG, "wordWidth= " + viewports.getValueAt(currentViewport).getWorldWidth() +
+                "  wordHeight= " + viewports.getValueAt(currentViewport).getWorldHeight());
+        /**
+         * 通过log发现StretchViewport变的只有viewport，world size没有发生变化
+         * 其余的viewport 和 world size都会发生变化
+         */
     }
 
     @Override
