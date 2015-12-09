@@ -8,6 +8,7 @@ import java.util.List;
 import com.badlogic.gdx.utils.reflect.ClassReflection;
 import com.badlogic.gdx.utils.reflect.ReflectionException;
 import com.libgdx.cookbook.chp02.SpriteBatchSample;
+import com.libgdx.cookbook.chp02.SpriteSample;
 import com.libgdx.cookbook.chp02.TextureAtlasSample;
 import com.libgdx.cookbook.chp02.ViewportSample;
 
@@ -22,7 +23,8 @@ public class SampleList {
 	public static final List<Class< ? extends BaseScreen>> sampleList = new ArrayList<Class< ? extends BaseScreen>>(Arrays.asList(
 	 				SpriteBatchSample.class,
 	 				TextureAtlasSample.class,
-	 				ViewportSample.class
+	 				ViewportSample.class,
+	 				SpriteSample.class
 	 				));
 	
 	public List<String> getNames() {

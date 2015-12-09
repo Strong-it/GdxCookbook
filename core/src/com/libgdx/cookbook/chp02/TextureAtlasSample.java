@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.libgdx.cookbook.help.BaseScreen;
+import com.libgdx.cookbook.help.DebugTool;
 /*
 Game: create
 TextureAtlasSample: constructor
@@ -52,6 +53,7 @@ public class TextureAtlasSample extends BaseScreen {
 		camera = new OrthographicCamera();
 		viewport = new FitViewport(SCREEN_WIDTH, SCREEN_HEIGHT, camera);
 		batch = new SpriteBatch();
+		debugTool = new DebugTool(camera);
 		
 		atlas = new TextureAtlas(Gdx.files.internal("data/prehistoric.atlas"));
 		backgroundRegion = atlas.findRegion("background");

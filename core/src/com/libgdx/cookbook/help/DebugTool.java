@@ -13,7 +13,7 @@ public class DebugTool {
 	private final String TAG = DebugTool.class.getSimpleName();
 	OrthographicCamera camera;
 	Vector3 velocityCam = new Vector3(0.1f, 0.1f, 0.1f); // 由于世界的大小为12.8*7.2 pixel，因此照相机的移动速度要变小
-	ShapeRenderer shapeRenderer;
+	public ShapeRenderer shapeRenderer;
 
 	public DebugTool(OrthographicCamera camera) {
 		this.camera = camera;

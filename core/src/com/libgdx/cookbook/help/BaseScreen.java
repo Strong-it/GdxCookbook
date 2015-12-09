@@ -17,6 +17,7 @@ public abstract class BaseScreen extends InputAdapter implements Screen {
 	
 	public static final Color BACKGROUND_COLOR = new Color(0.39f, 0.58f, 0.92f, 1.0f);
 	public static final float WORLD_TO_SCREEN = 1.0f / 100.0f;
+	public static final float SCREEN_TO_WORLD = 100.0f;
 	public static final float SCREEN_WIDTH = 12.80f;
 	public static final float SCREEN_HEIGHT = 7.20f;
 	
