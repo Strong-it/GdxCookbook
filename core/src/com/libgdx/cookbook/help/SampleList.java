@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.badlogic.gdx.utils.reflect.ClassReflection;
 import com.badlogic.gdx.utils.reflect.ReflectionException;
+import com.libgdx.cookbook.chp02.AnimatedSpriteSample;
 import com.libgdx.cookbook.chp02.SpriteBatchSample;
 import com.libgdx.cookbook.chp02.SpriteSample;
 import com.libgdx.cookbook.chp02.TextureAtlasSample;
@@ -24,7 +25,8 @@ public class SampleList {
 	 				SpriteBatchSample.class,
 	 				TextureAtlasSample.class,
 	 				ViewportSample.class,
-	 				SpriteSample.class
+	 				SpriteSample.class,
+	 				AnimatedSpriteSample.class
 	 				));
 	
 	public List<String> getNames() {
