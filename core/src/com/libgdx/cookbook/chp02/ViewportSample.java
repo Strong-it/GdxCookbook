@@ -72,8 +72,8 @@ public class ViewportSample extends BaseScreen {
     @Override
     public void resize(int width, int height) {
         viewports.getValueAt(currentViewport).update(width, height);
-        Gdx.app.log(TAG, "viewportWidth= " + viewports.getValueAt(currentViewport).getScreenWidth() +
-                "  viewportHeight= " + viewports.getValueAt(currentViewport).getScreenHeight());
+        Gdx.app.log(TAG, "screentWidth= " + viewports.getValueAt(currentViewport).getScreenWidth() +
+                "  screentHeight= " + viewports.getValueAt(currentViewport).getScreenHeight());
         Gdx.app.log(TAG, "wordWidth= " + viewports.getValueAt(currentViewport).getWorldWidth() +
                 "  wordHeight= " + viewports.getValueAt(currentViewport).getWorldHeight());
         /**

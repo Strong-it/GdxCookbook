@@ -12,6 +12,7 @@ import com.libgdx.cookbook.chp02.SpriteBatchSample;
 import com.libgdx.cookbook.chp02.SpriteSample;
 import com.libgdx.cookbook.chp02.TextureAtlasSample;
 import com.libgdx.cookbook.chp02.ViewportSample;
+import com.libgdx.cookbook.chp03.ParticleEffectsSample;
 
 /****
  * 列举出所有的SampleList，然后在第一个页面展示
@@ -26,7 +27,8 @@ public class SampleList {
 	 				TextureAtlasSample.class,
 	 				ViewportSample.class,
 	 				SpriteSample.class,
-	 				AnimatedSpriteSample.class
+	 				AnimatedSpriteSample.class,
+	 				ParticleEffectsSample.class
 	 				));
 	
 	public List<String> getNames() {
