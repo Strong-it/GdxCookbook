@@ -32,11 +32,11 @@ public class AnimatedSpriteSample extends BaseScreen {
     @Override
     public void show() {
        camera = new OrthographicCamera();
-       viewport = new FitViewport(SCREEN_WIDTH, SCREEN_HEIGHT, camera);
+       viewport = new FitViewport(SCENE_WIDTH, SCENE_HEIGHT, camera);
        batch = new SpriteBatch();
        debugTool = new DebugTool(camera);
        
-       camera.position.set(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.5f, 0);  // 相当于把世界的坐标放在屏幕左下角,默认是在屏幕中间
+       camera.position.set(SCENE_WIDTH * 0.5f, SCENE_HEIGHT * 0.5f, 0);  // 相当于把世界的坐标放在屏幕左下角,默认是在屏幕中间
        camera.update();
        animationTime = 0.0f;
        
@@ -71,7 +71,7 @@ public class AnimatedSpriteSample extends BaseScreen {
         int height = background.getHeight();
         
         batch.draw(background, 
-                    0.0f, 0.0f,   // 如果把camera的坐标设为(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.5f, 0) 那么可以从0，0 开始
+                    0.0f, 0.0f,   // 如果把camera的坐标设为(SCENE_WIDTH * 0.5f, SCENE_HEIGHT * 0.5f, 0) 那么可以从0，0 开始
                     0.0f, 0.0f,   // 同时此处也要设置为 (0, 0) 
                     width, height,
                     WORLD_TO_SCREEN, WORLD_TO_SCREEN, //缩放background
@@ -80,7 +80,7 @@ public class AnimatedSpriteSample extends BaseScreen {
                     width, height,
                     false, false);
         debugTool.operateCamera();
-//        debugTool.drawGrid(SCREEN_WIDTH, SCREEN_HEIGHT);
+//        debugTool.drawGrid(SCENE_WIDTH, SCENE_HEIGHT);
         
         TextureRegion cavemanFrame = cavemanWalk.getKeyFrame(animationTime);
         width = cavemanFrame.getRegionWidth();

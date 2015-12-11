@@ -33,7 +33,7 @@ public class SpriteBatchSample extends BaseScreen {
 		Gdx.app.log(TAG, "show");
 		camera = new OrthographicCamera();
 		debugTool = new DebugTool(camera);
-		viewport = new FitViewport(SCREEN_WIDTH, SCREEN_HEIGHT, camera);
+		viewport = new FitViewport(SCENE_WIDTH, SCENE_HEIGHT, camera);
 		batch = new SpriteBatch();
 		
 		cavemanTexture = new Texture(Gdx.files.internal("data/caveman.png"));
@@ -54,7 +54,7 @@ public class SpriteBatchSample extends BaseScreen {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 		batch.setProjectionMatrix(camera.combined);  // 设置batch的camera的正交投影
-		debugTool.drawGrid(SCREEN_WIDTH, SCREEN_HEIGHT);  // 画出表格来确定人物所在的位置
+		debugTool.drawGrid(SCENE_WIDTH, SCENE_HEIGHT);  // 画出表格来确定人物所在的位置
 		
 		batch.begin();
 		// Render caveman centered on screen

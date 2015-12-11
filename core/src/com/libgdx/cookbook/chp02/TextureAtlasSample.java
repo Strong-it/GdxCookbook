@@ -51,7 +51,7 @@ public class TextureAtlasSample extends BaseScreen {
 	public void show() {
 		Gdx.app.log(TAG, "show");
 		camera = new OrthographicCamera();
-		viewport = new FitViewport(SCREEN_WIDTH, SCREEN_HEIGHT, camera);
+		viewport = new FitViewport(SCENE_WIDTH, SCENE_HEIGHT, camera);
 		batch = new SpriteBatch();
 		debugTool = new DebugTool(camera);
 		

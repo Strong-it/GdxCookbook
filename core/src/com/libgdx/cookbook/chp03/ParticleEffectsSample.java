@@ -23,7 +23,7 @@ public class ParticleEffectsSample extends BaseScreen {
     @Override
     public void show() {
         camera = new OrthographicCamera();
-        viewport = new FitViewport(SCREEN_WIDTH, SCREEN_HEIGHT, camera);
+        viewport = new FitViewport(SCENE_WIDTH, SCENE_HEIGHT, camera);
         batch = new SpriteBatch();
         
         effects = new ParticleEffect[3];  // 装载粒子的容器,即加载.particle文件  最好要调用dispose

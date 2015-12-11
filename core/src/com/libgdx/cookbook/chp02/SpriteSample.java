@@ -30,7 +30,7 @@ public class SpriteSample extends BaseScreen {
     @Override
     public void show() {
         camera = new OrthographicCamera();
-        viewport = new FitViewport(SCREEN_WIDTH * SCREEN_TO_WORLD, SCREEN_HEIGHT * SCREEN_TO_WORLD, camera);
+        viewport = new FitViewport(SCENE_WIDTH * SCREEN_TO_WORLD, SCENE_HEIGHT * SCREEN_TO_WORLD, camera);
         batch = new SpriteBatch();
         debugTool = new DebugTool(camera);
         
@@ -74,7 +74,7 @@ public class SpriteSample extends BaseScreen {
         
         batch.begin();
         background.draw(batch);
-//        debugTool.drawGrid(SCREEN_WIDTH * SCREEN_TO_WORLD,  SCREEN_HEIGHT * SCREEN_TO_WORLD);
+//        debugTool.drawGrid(SCENE_WIDTH * SCREEN_TO_WORLD,  SCENE_HEIGHT * SCREEN_TO_WORLD);
         caveman.draw(batch);
         dinosaur.draw(batch);
         
