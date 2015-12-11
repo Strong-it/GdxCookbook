@@ -15,6 +15,7 @@ import com.libgdx.cookbook.chp02.ViewportSample;
 import com.libgdx.cookbook.chp03.FrameBufferParticleEffectSample;
 import com.libgdx.cookbook.chp03.FrameBufferSample;
 import com.libgdx.cookbook.chp03.ParticleEffectsSample;
+import com.libgdx.cookbook.chp04.InputPollingSample;
 
 /****
  * 列举出所有的SampleList，然后在第一个页面展示
@@ -32,7 +33,8 @@ public class SampleList {
 	 				AnimatedSpriteSample.class,
 	 				ParticleEffectsSample.class,
 	 				FrameBufferSample.class,
-	 				FrameBufferParticleEffectSample.class
+	 				FrameBufferParticleEffectSample.class,
+	 				InputPollingSample.class
 	 				));
 	
 	public List<String> getNames() {
