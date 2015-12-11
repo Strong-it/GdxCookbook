@@ -12,6 +12,7 @@ import com.libgdx.cookbook.chp02.SpriteBatchSample;
 import com.libgdx.cookbook.chp02.SpriteSample;
 import com.libgdx.cookbook.chp02.TextureAtlasSample;
 import com.libgdx.cookbook.chp02.ViewportSample;
+import com.libgdx.cookbook.chp03.FrameBufferParticleEffectSample;
 import com.libgdx.cookbook.chp03.FrameBufferSample;
 import com.libgdx.cookbook.chp03.ParticleEffectsSample;
 
@@ -30,7 +31,8 @@ public class SampleList {
 	 				SpriteSample.class,
 	 				AnimatedSpriteSample.class,
 	 				ParticleEffectsSample.class,
-	 				FrameBufferSample.class
+	 				FrameBufferSample.class,
+	 				FrameBufferParticleEffectSample.class
 	 				));
 	
 	public List<String> getNames() {
