@@ -10,8 +10,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 import com.libgdx.cookbook.help.BaseScreen;
 
+/**
+ * OrthographicCamera(正交摄像机的基本操作)
+ * HUD(heads up display)显示游戏界面的基本元素，保持元素位置保持不变
+ *
+ */
 public class OrthographicCameraSample extends BaseScreen {
 
     private static final float CAMERA_SPEED = 2.0f;
@@ -20,20 +26,29 @@ public class OrthographicCameraSample extends BaseScreen {
     private static final float CAMERA_ZOOM_MIN = 0.01f;
     private static final float CAMERA_MOVE_EDGE = 0.2f;
     
+    private OrthographicCamera cameraHUD;
+    private Viewport viewportHUD;
+    private Texture hudTexture;
     private Texture levelTexture;
     private Vector3 touch;
     
     @Override
     public void show() {
+        cameraHUD = new OrthographicCamera();
         camera = new OrthographicCamera();
+        viewportHUD = new FitViewport(SCENE_WIDTH * SCREEN_TO_WORLD, SCENE_HEIGHT * SCREEN_TO_WORLD, cameraHUD);
         viewport = new FitViewport(SCENE_WIDTH, SCENE_HEIGHT, camera);
         batch = new SpriteBatch();
         touch = new Vector3();
         
+        hudTexture = new Texture(Gdx.files.internal("data/facebook.png"));
         levelTexture = new Texture(Gdx.files.internal("data/jungle-level.png"));
+        hudTexture.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
         levelTexture.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
         
+        cameraHUD.position.set(SCENE_WIDTH * SCREEN_TO_WORLD * 0.5f, SCENE_HEIGHT * SCREEN_TO_WORLD * 0.5f, 0);
         camera.position.set(SCENE_WIDTH * 0.5f, SCENE_HEIGHT * 0.5f, 0);
+        cameraHUD.update();
     }
     
     @Override
@@ -107,16 +122,24 @@ public class OrthographicCameraSample extends BaseScreen {
                     levelTexture.getWidth(), levelTexture.getHeight(), 
                     false, false);
         batch.end();
+        
+        // Render UI elements
+        batch.setProjectionMatrix(cameraHUD.combined);
+        batch.begin();
+        batch.draw(hudTexture, 20, 20);
+        batch.end();
     }
     
     @Override
     public void resize(int width, int height) {
         viewport.update(width, height);
+        viewportHUD.update(width, height);
     }
     
     @Override
     public void hide() {
         batch.dispose();
         levelTexture.dispose();
+        hudTexture.dispose();
     }
 }
