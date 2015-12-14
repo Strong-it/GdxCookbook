@@ -8,6 +8,7 @@ import java.util.List;
 import com.badlogic.gdx.utils.reflect.ClassReflection;
 import com.badlogic.gdx.utils.reflect.ReflectionException;
 import com.libgdx.cookbook.chp02.AnimatedSpriteSample;
+import com.libgdx.cookbook.chp02.OrthographicCameraSample;
 import com.libgdx.cookbook.chp02.SpriteBatchSample;
 import com.libgdx.cookbook.chp02.SpriteSample;
 import com.libgdx.cookbook.chp02.TextureAtlasSample;
@@ -34,7 +35,8 @@ public class SampleList {
 	 				ParticleEffectsSample.class,
 	 				FrameBufferSample.class,
 	 				FrameBufferParticleEffectSample.class,
-	 				InputPollingSample.class
+	 				InputPollingSample.class,
+	 				OrthographicCameraSample.class
 	 				));
 	
 	public List<String> getNames() {
