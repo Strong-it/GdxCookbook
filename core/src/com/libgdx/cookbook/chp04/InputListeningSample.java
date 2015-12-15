@@ -1,6 +1,7 @@
 package com.libgdx.cookbook.chp04;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -12,8 +13,9 @@ import com.libgdx.cookbook.help.BaseScreen;
 
 /**
  * Event Poll 是主动查询事件的触发
- * Event Listener 是被动事件触发，主要是Listener应用应用了Observer模式
- * 当有事件发生时会主动notify
+ * Event Listener 是被动事件触发，主要是Listener应用应用了Observer模式 当有事件发生时会主动notify
+ * 
+ * libgdx 并不是继承自不同的Activity，所以当按下Back和Menu的时候，会退出程序，因为我们需要捕捉事件处理
  */
 public class InputListeningSample extends BaseScreen {
 
@@ -35,6 +37,8 @@ public class InputListeningSample extends BaseScreen {
         camera.update();
         
         Gdx.input.setInputProcessor(this); // 此方法一次只能是一个Input processor有效
+        Gdx.input.setCatchBackKey(true);
+        Gdx.input.setCatchMenuKey(true);
     }
     
     @Override
@@ -64,6 +68,13 @@ public class InputListeningSample extends BaseScreen {
     @Override
     public boolean keyDown(int keycode) {
         addMessage("keyDown: keycode(" + keycode + ")");
+        
+        if (keycode == Keys.BACK) {
+            // TODO: 处理返回事件
+        } else if (keycode == Keys.MENU) {
+            // TODO: 处理菜单事件
+        }
+        
         return true;
     }
     
