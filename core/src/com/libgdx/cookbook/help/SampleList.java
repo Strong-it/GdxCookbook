@@ -16,6 +16,7 @@ import com.libgdx.cookbook.chp02.ViewportSample;
 import com.libgdx.cookbook.chp03.FrameBufferParticleEffectSample;
 import com.libgdx.cookbook.chp03.FrameBufferSample;
 import com.libgdx.cookbook.chp03.ParticleEffectsSample;
+import com.libgdx.cookbook.chp04.InputListeningSample;
 import com.libgdx.cookbook.chp04.InputPollingSample;
 
 /****
@@ -36,7 +37,8 @@ public class SampleList {
 	 				FrameBufferSample.class,
 	 				FrameBufferParticleEffectSample.class,
 	 				InputPollingSample.class,
-	 				OrthographicCameraSample.class
+	 				OrthographicCameraSample.class,
+	 				InputListeningSample.class
 	 				));
 	
 	public List<String> getNames() {
