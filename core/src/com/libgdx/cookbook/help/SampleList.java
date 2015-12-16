@@ -16,6 +16,7 @@ import com.libgdx.cookbook.chp02.ViewportSample;
 import com.libgdx.cookbook.chp03.FrameBufferParticleEffectSample;
 import com.libgdx.cookbook.chp03.FrameBufferSample;
 import com.libgdx.cookbook.chp03.ParticleEffectsSample;
+import com.libgdx.cookbook.chp04.GestureDetectorSample;
 import com.libgdx.cookbook.chp04.InputListeningSample;
 import com.libgdx.cookbook.chp04.InputMultiplexerSample;
 import com.libgdx.cookbook.chp04.InputPollingSample;
@@ -40,7 +41,8 @@ public class SampleList {
 	 				InputPollingSample.class,
 	 				OrthographicCameraSample.class,
 	 				InputListeningSample.class,
-	 				InputMultiplexerSample.class
+	 				InputMultiplexerSample.class,
+	 				GestureDetectorSample.class
 	 				));
 	
 	public List<String> getNames() {
