@@ -12,6 +12,10 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.libgdx.cookbook.help.BaseScreen;
 
+/**
+ * Achieving juicy effects with particles
+ *
+ */
 public class ParticleEffectsSample extends BaseScreen {
 
     private ParticleEffect[] effects;

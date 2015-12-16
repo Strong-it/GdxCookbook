@@ -12,6 +12,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.libgdx.cookbook.help.BaseScreen;
 
 /**
+ * Defecting user input via event listening
  * Event Poll 是主动查询事件的触发
  * Event Listener 是被动事件触发，主要是Listener应用应用了Observer模式 当有事件发生时会主动notify
  * 

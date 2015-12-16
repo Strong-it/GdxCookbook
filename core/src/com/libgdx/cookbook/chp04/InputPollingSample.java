@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.libgdx.cookbook.help.BaseScreen;
 
 /***
+ * Detecting user input via event polling
  * 主要测试Input的基本操作 Gdx.input.getX()  Gdx.input.getY() 不依赖事件触发 可随时调用
  * 其余测试主要测试鼠标和键盘对libgdx的触发, 但是这些函数都要放在render函数中
  */

@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.libgdx.cookbook.help.BaseScreen;
 
 /**
+ * Understanding orthographic camera
  * OrthographicCamera(正交摄像机的基本操作)
  * HUD(heads up display)显示游戏界面的基本元素，保持元素位置保持不变
  *

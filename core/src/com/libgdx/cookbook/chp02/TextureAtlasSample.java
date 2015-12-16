@@ -31,6 +31,10 @@ BaseScreen: resize
 // 从log可以看出当从一个screen1跳到screen2时先调用此screen2的构造函数
 // 然后调用要被隐藏的screen1的hide函数，再调用screen1的show函数
 */
+/**
+ * More effective rendering with regions and atlases
+ *
+ */
 public class TextureAtlasSample extends BaseScreen {
 	private final String TAG = TextureAtlasSample.class.getSimpleName();
 	

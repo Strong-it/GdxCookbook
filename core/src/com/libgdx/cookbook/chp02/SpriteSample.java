@@ -16,6 +16,10 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.libgdx.cookbook.help.BaseScreen;
 import com.libgdx.cookbook.help.DebugTool;
 
+/**
+ * Taking advantage of Libgdx sprites
+ *
+ */
 public class SpriteSample extends BaseScreen {
 
     private TextureAtlas atlas;

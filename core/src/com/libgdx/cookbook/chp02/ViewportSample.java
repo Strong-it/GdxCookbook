@@ -14,6 +14,10 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.libgdx.cookbook.help.BaseScreen;
 
+/**
+ * Handing multiple screen sizes with viewports
+ *
+ */
 public class ViewportSample extends BaseScreen {
 
     private final String TAG = Viewport.class.getSimpleName();

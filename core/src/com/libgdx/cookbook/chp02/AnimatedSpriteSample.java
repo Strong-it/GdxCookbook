@@ -17,6 +17,10 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.libgdx.cookbook.help.BaseScreen;
 import com.libgdx.cookbook.help.DebugTool;
 
+/**
+ * Rendering sprite-sheet-based animations
+ *
+ */
 public class AnimatedSpriteSample extends BaseScreen {
 
     private static final float FRAME_DURATION = 1.0f / 30.0f;   // √ø√Îœ‘ æ30÷°

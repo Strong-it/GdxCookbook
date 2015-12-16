@@ -13,6 +13,10 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.libgdx.cookbook.help.BaseScreen;
 import com.libgdx.cookbook.help.DebugTool;
 
+/**
+ * Texture rendering with spritebatch
+ *
+ */
 public class SpriteBatchSample extends BaseScreen {
 	final String TAG = SpriteBatchSample.class.getSimpleName();
 	

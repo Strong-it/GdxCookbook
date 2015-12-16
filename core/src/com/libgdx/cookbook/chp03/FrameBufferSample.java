@@ -11,6 +11,10 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.libgdx.cookbook.help.BaseScreen;
 
+/**
+ * Frame buffers and image composition
+ *
+ */
 public class FrameBufferSample extends BaseScreen {
 
     private enum GalleryState {
