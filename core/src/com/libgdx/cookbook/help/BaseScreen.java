@@ -40,7 +40,6 @@ public abstract class BaseScreen extends InputAdapter implements Screen {
 	@Override
 	public void resize(int width, int height) {
 		Gdx.app.log(TAG, "resize");
-		viewport.update(width, height, false);
 	}
 
 	@Override

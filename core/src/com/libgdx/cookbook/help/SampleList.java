@@ -21,6 +21,7 @@ import com.libgdx.cookbook.chp04.InputListeningSample;
 import com.libgdx.cookbook.chp04.InputMappingSample;
 import com.libgdx.cookbook.chp04.InputMultiplexerSample;
 import com.libgdx.cookbook.chp04.InputPollingSample;
+import com.libgdx.cookbook.chp05.SoundEffectSample;
 
 /****
  * 列举出所有的SampleList，然后在第一个页面展示
@@ -44,7 +45,8 @@ public class SampleList {
 	 				InputListeningSample.class,
 	 				InputMultiplexerSample.class,
 	 				GestureDetectorSample.class,
-	 				InputMappingSample.class
+	 				InputMappingSample.class,
+	 				SoundEffectSample.class
 	 				));
 	
 	public List<String> getNames() {
