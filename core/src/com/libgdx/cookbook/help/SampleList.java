@@ -24,6 +24,7 @@ import com.libgdx.cookbook.chp04.InputPollingSample;
 import com.libgdx.cookbook.chp05.CarEngineSample;
 import com.libgdx.cookbook.chp05.MusicSample;
 import com.libgdx.cookbook.chp05.SoundEffectSample;
+import com.libgdx.cookbook.chp05.SpatialAudioSample;
 
 /****
  * 列举出所有的SampleList，然后在第一个页面展示
@@ -50,7 +51,8 @@ public class SampleList {
 	 				InputMappingSample.class,
 	 				SoundEffectSample.class,
 	 				MusicSample.class,
-	 				CarEngineSample.class
+	 				CarEngineSample.class,
+	 				SpatialAudioSample.class
 	 				));
 	
 	public List<String> getNames() {
