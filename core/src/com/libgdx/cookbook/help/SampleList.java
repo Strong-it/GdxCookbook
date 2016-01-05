@@ -23,6 +23,7 @@ import com.libgdx.cookbook.chp04.InputMultiplexerSample;
 import com.libgdx.cookbook.chp04.InputPollingSample;
 import com.libgdx.cookbook.chp05.CarEngineSample;
 import com.libgdx.cookbook.chp05.FileHandlingSample;
+import com.libgdx.cookbook.chp05.JsonParsingSample;
 import com.libgdx.cookbook.chp05.MusicSample;
 import com.libgdx.cookbook.chp05.PreferencesSample;
 import com.libgdx.cookbook.chp05.SoundEffectSample;
@@ -58,7 +59,8 @@ public class SampleList {
 	 				SpatialAudioSample.class,
 	 				FileHandlingSample.class,
 	 				PreferencesSample.class,
-	 				XmlParsingSample.class
+	 				XmlParsingSample.class,
+	 				JsonParsingSample.class
 	 				));
 	
 	public List<String> getNames() {
