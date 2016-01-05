@@ -30,6 +30,8 @@ import com.libgdx.cookbook.chp05.SoundEffectSample;
 import com.libgdx.cookbook.chp05.SpatialAudioSample;
 import com.libgdx.cookbook.chp05.XmlParsingSample;
 import com.libgdx.cookbook.chp06.BitmapFontSample;
+import com.libgdx.cookbook.chp06.DistanceFieldFontSample;
+import com.libgdx.cookbook.chp06.HieroFontEffectsSample;
 
 /****
  * 列举出所有的SampleList，然后在第一个页面展示
@@ -62,7 +64,9 @@ public class SampleList {
 	 				PreferencesSample.class,
 	 				XmlParsingSample.class,
 	 				JsonParsingSample.class,
-	 				BitmapFontSample.class
+	 				BitmapFontSample.class,
+	 				HieroFontEffectsSample.class,
+	 				DistanceFieldFontSample.class
 	 				));
 	
 	public List<String> getNames() {
