@@ -30,6 +30,7 @@ import com.libgdx.cookbook.chp05.SoundEffectSample;
 import com.libgdx.cookbook.chp05.SpatialAudioSample;
 import com.libgdx.cookbook.chp05.XmlParsingSample;
 import com.libgdx.cookbook.chp06.BitmapFontSample;
+import com.libgdx.cookbook.chp06.DistanceFieldEffectsSample;
 import com.libgdx.cookbook.chp06.DistanceFieldFontSample;
 import com.libgdx.cookbook.chp06.HieroFontEffectsSample;
 
@@ -66,7 +67,8 @@ public class SampleList {
 	 				JsonParsingSample.class,
 	 				BitmapFontSample.class,
 	 				HieroFontEffectsSample.class,
-	 				DistanceFieldFontSample.class
+	 				DistanceFieldFontSample.class,
+	 				DistanceFieldEffectsSample.class
 	 				));
 	
 	public List<String> getNames() {
