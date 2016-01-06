@@ -33,6 +33,8 @@ import com.libgdx.cookbook.chp06.BitmapFontSample;
 import com.libgdx.cookbook.chp06.DistanceFieldEffectsSample;
 import com.libgdx.cookbook.chp06.DistanceFieldFontSample;
 import com.libgdx.cookbook.chp06.HieroFontEffectsSample;
+import com.libgdx.cookbook.chp07.AssetManagerSample;
+import com.libgdx.cookbook.chp07.ProgressBarSample;
 
 /****
  * 列举出所有的SampleList，然后在第一个页面展示
@@ -68,7 +70,9 @@ public class SampleList {
 	 				BitmapFontSample.class,
 	 				HieroFontEffectsSample.class,
 	 				DistanceFieldFontSample.class,
-	 				DistanceFieldEffectsSample.class
+	 				DistanceFieldEffectsSample.class,
+	 				AssetManagerSample.class,
+	 				ProgressBarSample.class
 	 				));
 	
 	public List<String> getNames() {
