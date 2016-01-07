@@ -34,6 +34,8 @@ import com.libgdx.cookbook.chp06.DistanceFieldEffectsSample;
 import com.libgdx.cookbook.chp06.DistanceFieldFontSample;
 import com.libgdx.cookbook.chp06.HieroFontEffectsSample;
 import com.libgdx.cookbook.chp07.AssetManagerSample;
+import com.libgdx.cookbook.chp07.CustomLoaderSample;
+import com.libgdx.cookbook.chp07.GroupingAssetsSample;
 import com.libgdx.cookbook.chp07.ProgressBarSample;
 
 /****
@@ -72,7 +74,9 @@ public class SampleList {
 	 				DistanceFieldFontSample.class,
 	 				DistanceFieldEffectsSample.class,
 	 				AssetManagerSample.class,
-	 				ProgressBarSample.class
+	 				ProgressBarSample.class,
+	 				CustomLoaderSample.class,
+	 				GroupingAssetsSample.class
 	 				));
 	
 	public List<String> getNames() {

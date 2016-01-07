@@ -53,7 +53,7 @@ public class AssetManagerSample extends BaseScreen {
         
         renderer = new OrthogonalTiledMapRenderer(map, unitScale);
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, 80, 45);  // 80, 45相当于设置了viewport
+        camera.setToOrtho(false, 80, 45);  // 80, 45相当于设置了viewport,虽然resize里面没有设置，但是看起来缩放时跟着缩放
         camera.update();
         
         // Get logo position
