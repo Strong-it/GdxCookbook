@@ -37,6 +37,8 @@ import com.libgdx.cookbook.chp07.AssetManagerSample;
 import com.libgdx.cookbook.chp07.CustomLoaderSample;
 import com.libgdx.cookbook.chp07.GroupingAssetsSample;
 import com.libgdx.cookbook.chp07.ProgressBarSample;
+import com.libgdx.cookbook.chp08.ActorSample;
+import com.libgdx.cookbook.chp08.WidgetsSample;
 
 /****
  * 列举出所有的SampleList，然后在第一个页面展示
@@ -76,7 +78,9 @@ public class SampleList {
 	 				AssetManagerSample.class,
 	 				ProgressBarSample.class,
 	 				CustomLoaderSample.class,
-	 				GroupingAssetsSample.class
+	 				GroupingAssetsSample.class,
+	 				ActorSample.class,
+	 				WidgetsSample.class
 	 				));
 	
 	public List<String> getNames() {
