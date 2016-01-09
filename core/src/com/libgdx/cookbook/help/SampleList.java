@@ -38,6 +38,7 @@ import com.libgdx.cookbook.chp07.CustomLoaderSample;
 import com.libgdx.cookbook.chp07.GroupingAssetsSample;
 import com.libgdx.cookbook.chp07.ProgressBarSample;
 import com.libgdx.cookbook.chp08.ActorSample;
+import com.libgdx.cookbook.chp08.MainMenuSample;
 import com.libgdx.cookbook.chp08.WidgetsSample;
 
 /****
@@ -80,7 +81,8 @@ public class SampleList {
 	 				CustomLoaderSample.class,
 	 				GroupingAssetsSample.class,
 	 				ActorSample.class,
-	 				WidgetsSample.class
+	 				WidgetsSample.class,
+	 				MainMenuSample.class
 	 				));
 	
 	public List<String> getNames() {

@@ -303,6 +303,7 @@ public class WidgetsSample extends BaseScreen {
                 Gdx.app.exit();
             };
         });
+        // The dialog will close if an inner button is clicked
         TextButton tb2 = new TextButton("No", tbs);
 
         Window.WindowStyle ws2 = new Window.WindowStyle();
