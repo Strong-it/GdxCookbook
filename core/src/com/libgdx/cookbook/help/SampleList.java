@@ -42,6 +42,8 @@ import com.libgdx.cookbook.chp08.CustomWidgetSample;
 import com.libgdx.cookbook.chp08.MainMenuSample;
 import com.libgdx.cookbook.chp08.SkinCustomizationSample;
 import com.libgdx.cookbook.chp08.WidgetsSample;
+import com.libgdx.cookbook.chp09.TiledMapObjectsSample;
+import com.libgdx.cookbook.chp09.TiledMapSample;
 
 /****
  * 列举出所有的SampleList，然后在第一个页面展示
@@ -86,7 +88,9 @@ public class SampleList {
 	 				WidgetsSample.class,
 	 				MainMenuSample.class,
 	 				SkinCustomizationSample.class,
-	 				CustomWidgetSample.class
+	 				CustomWidgetSample.class,
+	 				TiledMapSample.class,
+	 				TiledMapObjectsSample.class
 	 				));
 	
 	public List<String> getNames() {

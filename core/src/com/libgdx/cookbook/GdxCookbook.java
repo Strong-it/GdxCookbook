@@ -21,7 +21,7 @@ public class GdxCookbook extends Game {
 		// TODO: 以后学习UI部分之后做一个List
 		//Gdx.app.log(TAG, "class" + SampleList.newSample("TextureAtlasSample")); // 这是获取一个对象,后面会带@字符串
 		//Gdx.app.log(TAG, "class" + SampleList.sampleList.get(1));                // 这是获取一个类
-		setScreen(SampleList.newSample("CustomWidgetSample"));
+		setScreen(SampleList.newSample("TiledMapObjectsSample"));
 //		setScreen(new TextureAtlasSample(this));
 	}
 
