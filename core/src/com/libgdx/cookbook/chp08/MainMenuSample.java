@@ -1,6 +1,7 @@
 package com.libgdx.cookbook.chp08;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -164,6 +165,10 @@ public class MainMenuSample extends BaseScreen {
 
         stage.act(Math.min(Gdx.graphics.getDeltaTime(), 1 / 60f));
         stage.draw();
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
 
     @Override

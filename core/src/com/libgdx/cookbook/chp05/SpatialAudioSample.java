@@ -105,6 +105,10 @@ public class SpatialAudioSample extends BaseScreen {
                    player.direction.angle());  // player箭头跟随鼠标转动
         
         batch.end();
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
     
     private void createSoundEmitters() {

@@ -117,6 +117,10 @@ public class GroupingAssetsSample extends BaseScreen {
             batch.draw(currentFrame, cavemanX, .0f);
             batch.end();
         }*/
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
 
     // Move caveman sprite along the screen (no limits applied)

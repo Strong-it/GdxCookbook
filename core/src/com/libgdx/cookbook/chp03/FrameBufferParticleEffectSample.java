@@ -1,6 +1,7 @@
 package com.libgdx.cookbook.chp03;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Pixmap.Format;
@@ -106,6 +107,10 @@ public class FrameBufferParticleEffectSample extends BaseScreen {
                     WORLD_TO_SCREEN, WORLD_TO_SCREEN,
                     0.0f);
         batch.end();
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
     
     @Override

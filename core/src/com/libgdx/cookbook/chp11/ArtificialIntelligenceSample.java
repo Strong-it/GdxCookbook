@@ -1,6 +1,7 @@
 package com.libgdx.cookbook.chp11;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.libgdx.cookbook.ai.Caveman;
 import com.libgdx.cookbook.ai.Dinosaur;
@@ -26,6 +27,10 @@ public class ArtificialIntelligenceSample extends BaseScreen {
 
         caveman.update(Gdx.graphics.getDeltaTime());
         dinosaur.update(Gdx.graphics.getDeltaTime());
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
 
 }

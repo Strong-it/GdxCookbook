@@ -2,27 +2,20 @@ package com.libgdx.cookbook;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.libgdx.cookbook.chp02.TextureAtlasSample;
-import com.libgdx.cookbook.help.SampleList;
+import com.libgdx.cookbook.help.MainMenuScreen;
 
 public class GdxCookbook extends Game {
 	final String TAG = "Game";
 	
-	String[] sampleName;
-	
 	@Override
 	public void create() {
 		Gdx.app.log(TAG, "create");
-		int sampleNum = SampleList.sampleList.size();
-		sampleName = new String[sampleNum];
-		for (int i = 0; i < sampleNum; i++) {
-			sampleName[i] = SampleList.sampleList.get(i).getSimpleName();
-		}
+		
 		// TODO: 以后学习UI部分之后做一个List
 		//Gdx.app.log(TAG, "class" + SampleList.newSample("TextureAtlasSample")); // 这是获取一个对象,后面会带@字符串
 		//Gdx.app.log(TAG, "class" + SampleList.sampleList.get(1));                // 这是获取一个类
-		setScreen(SampleList.newSample("ArtificialIntelligenceSample"));
-//		setScreen(new TextureAtlasSample(this));
+		setScreen(new MainMenuScreen(this));
+//		setScreen(new SpriteBatchSample());
 	}
 
 	@Override

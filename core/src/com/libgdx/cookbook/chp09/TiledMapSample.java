@@ -49,6 +49,10 @@ public class TiledMapSample extends BaseScreen {
         
         renderer.setView(camera);   // ÉèÖÃrenderµÄÉãÏñ»ú
         renderer.render();  // go over all visible tile layers, drawing them from bottom to top
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
 
     private void updateCamera() {

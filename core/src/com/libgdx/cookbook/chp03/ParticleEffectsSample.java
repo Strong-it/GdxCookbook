@@ -1,6 +1,7 @@
 package com.libgdx.cookbook.chp03;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
@@ -91,6 +92,10 @@ public class ParticleEffectsSample extends BaseScreen {
             }
         }
         batch.end();
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
     
     @Override

@@ -120,4 +120,11 @@ public class MusicSample extends BaseScreen {
         }
         
     }
+
+    @Override
+    public void render(float delta) {
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
+    }
 }

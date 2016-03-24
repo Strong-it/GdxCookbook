@@ -91,4 +91,11 @@ public class SoundEffectSample extends BaseScreen {
         return true;
     }
 
+    @Override
+    public void render(float delta) {
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
+    }
+
 }

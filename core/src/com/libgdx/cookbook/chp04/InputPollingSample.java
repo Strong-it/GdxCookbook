@@ -99,6 +99,10 @@ public class InputPollingSample extends BaseScreen {
         font.draw(batch, vibrator ? "Vibrator available" : "Vibrator unavailable", 20.0f, scene_height - 670.0f);
         
         batch.end();
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
 
     @Override

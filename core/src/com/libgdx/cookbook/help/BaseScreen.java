@@ -1,12 +1,14 @@
 package com.libgdx.cookbook.help;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.libgdx.cookbook.GdxCookbook;
 
 /**
  * 增加BaseScreen 将screen用到的数据都放在这里
@@ -25,6 +27,7 @@ public abstract class BaseScreen extends InputAdapter implements Screen {
 	public DebugTool debugTool;
 	public Viewport viewport;
 	public SpriteBatch batch;
+	public GdxCookbook game;
 	
 	@Override
 	public void show() {
@@ -33,7 +36,6 @@ public abstract class BaseScreen extends InputAdapter implements Screen {
 
 	@Override
 	public void render(float delta) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -62,4 +64,11 @@ public abstract class BaseScreen extends InputAdapter implements Screen {
 		Gdx.app.log(TAG, "dispose");
 	}
 
+	public void setGame(GdxCookbook game) {
+	    this.game = game;
+	}
+	
+	public void goMainScreen() {
+	    game.setScreen(new MainMenuScreen(game));
+	}
 }

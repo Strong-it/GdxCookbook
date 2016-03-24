@@ -1,6 +1,7 @@
 package com.libgdx.cookbook.chp06;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -41,6 +42,10 @@ public class HieroFontEffectsSample extends BaseScreen {
         effectFont.draw(batch, "This effect is exciting!", 20.0f, VIRTUAL_HEIGHT - 50.0f);
         playFont.draw(batch, "Pretty boring text", 20.0f, VIRTUAL_HEIGHT - 140.0f);
         batch.end();
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
     
     @Override

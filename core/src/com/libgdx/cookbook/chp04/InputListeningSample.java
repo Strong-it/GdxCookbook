@@ -53,6 +53,10 @@ public class InputListeningSample extends BaseScreen {
             font.draw(batch, messages.get(i), 20.0f, SCENE_HEIGHT * SCREEN_TO_WORLD - 40.0f * (i + 1));
         }
         batch.end();
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
     
     @Override

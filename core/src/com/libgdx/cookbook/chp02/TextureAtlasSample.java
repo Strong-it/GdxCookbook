@@ -1,6 +1,5 @@
 package com.libgdx.cookbook.chp02;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
@@ -38,18 +37,12 @@ BaseScreen: resize
 public class TextureAtlasSample extends BaseScreen {
 	private final String TAG = TextureAtlasSample.class.getSimpleName();
 	
-	private Game game;
 	private TextureAtlas atlas;
 	private TextureRegion backgroundRegion;
 	private TextureRegion cavemanRegion;
 	private TextureRegion dinosaurRegion;
 	
 	float width, height, originX, originY;
-	
-	public TextureAtlasSample(Game game) {
-		Gdx.app.log(TAG, "constructor");
-		this.game = game;
-	}
 	
 	@Override
 	public void show() {
@@ -112,9 +105,9 @@ public class TextureAtlasSample extends BaseScreen {
 		
 		batch.end();
 		
-		if (Gdx.input.isKeyJustPressed(Keys.G)) {
-			gotoScreen();
-		}
+		if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
 	}
 
 	@Override
@@ -130,6 +123,6 @@ public class TextureAtlasSample extends BaseScreen {
 	}
 
 	private void gotoScreen() {
-		game.setScreen(new SpriteBatchSample(game));
+//		game.setScreen(new SpriteBatchSample(game));
 	}
 }

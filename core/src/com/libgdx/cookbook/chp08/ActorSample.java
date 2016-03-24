@@ -62,6 +62,10 @@ public class ActorSample extends BaseScreen {
 
         stage.act(delta);
         stage.draw();
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
 
     @Override

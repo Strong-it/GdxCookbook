@@ -66,6 +66,10 @@ public class CarEngineSample extends BaseScreen {
         font.draw(batch, "Speed: " + speed + "km/h", 20.0f, 200.0f);
         font.draw(batch, "Press SPACE or touch to accelerate", 20.0f, 150.0f);
         batch.end();
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
 
     @Override

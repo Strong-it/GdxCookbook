@@ -21,7 +21,7 @@ public class Caveman implements Telegraph {
 
     // 定义枚举类型
     public enum CavemanState implements State<Caveman> {
-        GLOBAL_STATE() {
+        GLOBAL_STATE() {  // 这个Global State其实可以随便命名，主要是后面setGlobalState函数起作用，而且update每次都要调用
             @Override
             public void enter(Caveman caveman) {
                caveman.say("enter GLOBAL_STATE");

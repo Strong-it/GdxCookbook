@@ -85,6 +85,10 @@ public class TiledMapObjectsSample extends BaseScreen {
         player.draw(batch);
 
         batch.end();
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
 
     @Override

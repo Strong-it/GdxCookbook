@@ -1,6 +1,7 @@
 package com.libgdx.cookbook.chp07;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.GL20;
@@ -83,6 +84,10 @@ public class AssetManagerSample extends BaseScreen {
         batch.begin();
         batch.draw(logo, logoPos.x, logoPos.y);
         batch.end();
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
 
     @Override

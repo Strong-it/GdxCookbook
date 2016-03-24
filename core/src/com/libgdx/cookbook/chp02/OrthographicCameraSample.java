@@ -129,6 +129,10 @@ public class OrthographicCameraSample extends BaseScreen {
         batch.begin();
         batch.draw(hudTexture, 20, 20);
         batch.end();
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
+        }
     }
     
     @Override

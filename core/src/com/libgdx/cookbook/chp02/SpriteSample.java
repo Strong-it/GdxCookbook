@@ -2,6 +2,7 @@ package com.libgdx.cookbook.chp02;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Buttons;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -91,6 +92,10 @@ public class SpriteSample extends BaseScreen {
             debugTool.shapeRenderer.rect(cavemanRect.x, cavemanRect.y, cavemanRect.width, cavemanRect.height);
             debugTool.shapeRenderer.rect(dinosaurRect.x, dinosaurRect.y, dinosaurRect.width, dinosaurRect.height);
             debugTool.shapeRenderer.end();
+        }
+        
+        if (Gdx.input.isKeyJustPressed(Keys.B)) {
+            goMainScreen();
         }
     }
 

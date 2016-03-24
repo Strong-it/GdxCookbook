@@ -1,6 +1,5 @@
 package com.libgdx.cookbook.chp02;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
@@ -20,17 +19,11 @@ import com.libgdx.cookbook.help.DebugTool;
 public class SpriteBatchSample extends BaseScreen {
 	final String TAG = SpriteBatchSample.class.getSimpleName();
 	
-	private Game game;
 	private Texture cavemanTexture;
 	private Color oldColor;
 	
 	private int width, height;
 	private float originX, originY;
-	
-	public SpriteBatchSample(Game game) {
-		Gdx.app.log(TAG, "constructor");
-		this.game = game;
-	}
 	
 	@Override
 	public void show() {
@@ -124,8 +117,8 @@ public class SpriteBatchSample extends BaseScreen {
 		
 		batch.end();
 		
-		if (Gdx.input.isKeyJustPressed(Keys.G)) {
-			gotoScreen();
+		if (Gdx.input.isKeyJustPressed(Keys.B)) {
+			goMainScreen();
 		}
 		
 	}
@@ -144,7 +137,4 @@ public class SpriteBatchSample extends BaseScreen {
 		debugTool.dispose();
 	}
 
-	private void gotoScreen() {
-		game.setScreen(new TextureAtlasSample(game));
-	}
 }
