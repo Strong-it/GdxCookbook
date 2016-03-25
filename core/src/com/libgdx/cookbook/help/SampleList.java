@@ -44,6 +44,8 @@ import com.libgdx.cookbook.chp08.SkinCustomizationSample;
 import com.libgdx.cookbook.chp08.WidgetsSample;
 import com.libgdx.cookbook.chp09.TiledMapObjectsSample;
 import com.libgdx.cookbook.chp09.TiledMapSample;
+import com.libgdx.cookbook.chp10.Box2DComplexShapesSample;
+import com.libgdx.cookbook.chp10.Box2DSimpleSample;
 import com.libgdx.cookbook.chp11.ArtificialIntelligenceSample;
 import com.libgdx.cookbook.chp11.LocalizationSample;
 
@@ -94,7 +96,9 @@ public class SampleList {
 	 				TiledMapSample.class,
 	 				TiledMapObjectsSample.class,
 	 				LocalizationSample.class,
-	 				ArtificialIntelligenceSample.class
+	 				ArtificialIntelligenceSample.class,
+	 				Box2DSimpleSample.class,
+	 				Box2DComplexShapesSample.class
 	 				));
 	
 	public List<String> getNames() {
