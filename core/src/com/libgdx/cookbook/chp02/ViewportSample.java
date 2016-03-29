@@ -89,6 +89,8 @@ public class ViewportSample extends BaseScreen {
          * 通过log发现StretchViewport变的只有viewport，world size没有发生变化
          * 其余的viewport 和 world size都会发生变化
          */
+        
+        Gdx.app.log(TAG, "screen x="+ viewports.getValueAt(currentViewport).getScreenX() + " y="+ viewports.getValueAt(currentViewport).getScreenY());
     }
 
     @Override

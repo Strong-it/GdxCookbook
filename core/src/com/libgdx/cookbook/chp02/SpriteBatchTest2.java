@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g3d.utils.FirstPersonCameraController;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.libgdx.cookbook.help.BaseScreen;
 
@@ -36,11 +37,10 @@ public class SpriteBatchTest2 extends BaseScreen {
 		camera.position.set(SCENE_WIDTH / 2f,  SCENE_HEIGHT / 2f, 0.0f);
 		camera.update();
 		Gdx.app.log(TAG, "camera.x" + camera.position.x);
-//		viewport = new FitViewport(SCENE_WIDTH, SCENE_HEIGHT, camera);
+		viewport = new FitViewport(SCENE_WIDTH, SCENE_HEIGHT, camera);
 		// 为了方便观察效果，将FitViewport转换为StretchViewport
+		// SCENE_WIDTH, SCENE_HEIGHT 其实是调用setWorldSize(SCENE_WIDTH, SCENE_HEIGHT)
 		viewport = new StretchViewport(SCENE_WIDTH, SCENE_HEIGHT, camera);
-		
-		//Gdx.app.log(TAG, "screen width="+ Gdx.graphics.getWidth() + " height="+ Gdx.graphics.getHeight());
 		
 		width = img.getWidth();
 		height = img.getHeight();
@@ -81,7 +81,9 @@ public class SpriteBatchTest2 extends BaseScreen {
 
 	@Override
 	public void resize(int width, int height) {
-		viewport.update(width, height);
+		viewport.update(width, height, true);
+		// 这个地方设置true, false camera的位置都不会发生改变
+		Gdx.app.log(TAG, "resize camera.x" + camera.position.x);
 		Gdx.app.log(TAG, "resize");
 	}
 
