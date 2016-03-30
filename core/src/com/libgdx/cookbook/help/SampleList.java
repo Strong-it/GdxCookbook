@@ -14,6 +14,7 @@ import com.libgdx.cookbook.chp02.SpriteBatchTest1;
 import com.libgdx.cookbook.chp02.SpriteBatchTest2;
 import com.libgdx.cookbook.chp02.SpriteSample;
 import com.libgdx.cookbook.chp02.TextureAtlasSample;
+import com.libgdx.cookbook.chp02.TextureRegionSample;
 import com.libgdx.cookbook.chp02.ViewportSample;
 import com.libgdx.cookbook.chp03.FrameBufferParticleEffectSample;
 import com.libgdx.cookbook.chp03.FrameBufferSample;
@@ -63,6 +64,7 @@ public class SampleList {
 	 				SpriteBatchSample.class,
 	 				SpriteBatchTest1.class,
 	 				SpriteBatchTest2.class,
+	 				TextureRegionSample.class,
 	 				TextureAtlasSample.class,
 	 				ViewportSample.class,
 	 				SpriteSample.class,
