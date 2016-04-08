@@ -5,6 +5,8 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.Texture.TextureFilter;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ArrayMap;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
@@ -28,18 +30,24 @@ public class ViewportSample extends BaseScreen {
 	private static final float MAX_SCENE_WIDTH = 1280.0f;
 	private static final float MAX_SCENE_HEIGHT = 720.0f;
 
-	private Texture background;
+	private Texture background, sprite;
 	private ArrayMap<String, Viewport> viewports;
 	private int currentViewport;
+	private BitmapFont font;
 	
     @Override
     public void show() {
         camera = new OrthographicCamera();
         batch =new SpriteBatch();
+        font = new BitmapFont();
+        font.getData().setScale(2.0f);
+        font.getRegion().getTexture().setFilter(TextureFilter.Linear, TextureFilter.Linear);
+        
         createViewports();
         selectNextViewport();
         
         background = new Texture(Gdx.files.internal("data/menu.png"));
+        sprite = new Texture(Gdx.files.internal("badlogic.jpg"));
         Gdx.input.setInputProcessor(this);
     }
 
@@ -59,7 +67,7 @@ public class ViewportSample extends BaseScreen {
         currentViewport = (currentViewport + 1) % viewports.size;
         
         viewports.getValueAt(currentViewport).update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        Gdx.app.log(TAG, "selcected " + viewports.getKeyAt(currentViewport));
+        getTextLog("selectNextViewport");
     }
 
     @Override
@@ -71,6 +79,9 @@ public class ViewportSample extends BaseScreen {
         
         batch.begin();
         batch.draw(background, -background.getWidth() * 0.5f, -background.getHeight() * 0.5f);
+        batch.draw(sprite, 0, 0);
+        batch.draw(sprite, -390, -290);
+        font.draw(batch, viewports.getKeyAt(currentViewport), -360, 260);
         batch.end();
         
         if (Gdx.input.isKeyJustPressed(Keys.B)) {
@@ -81,28 +92,40 @@ public class ViewportSample extends BaseScreen {
     @Override
     public void resize(int width, int height) {
         viewports.getValueAt(currentViewport).update(width, height);
-        Gdx.app.log(TAG, "screentWidth= " + viewports.getValueAt(currentViewport).getScreenWidth() +
-                "  screentHeight= " + viewports.getValueAt(currentViewport).getScreenHeight());
-        Gdx.app.log(TAG, "wordWidth= " + viewports.getValueAt(currentViewport).getWorldWidth() +
-                "  wordHeight= " + viewports.getValueAt(currentViewport).getWorldHeight());
         /**
          * 通过log发现StretchViewport变的只有viewport，world size没有发生变化
          * 其余的viewport 和 world size都会发生变化
          */
-        
-        Gdx.app.log(TAG, "screen x="+ viewports.getValueAt(currentViewport).getScreenX() + " y="+ viewports.getValueAt(currentViewport).getScreenY());
+        getTextLog("resize");
     }
 
     @Override
     public void hide() {
         batch.dispose();
         background.dispose();
+        sprite.dispose();
     }
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
         selectNextViewport();
         return true;
+    }
+    
+    private void getTextLog(String flag) {
+        Gdx.app.log(flag, "selcected " + viewports.getKeyAt(currentViewport));
+
+        Gdx.app.log(flag, "screentWidth= " + viewports.getValueAt(currentViewport).getScreenWidth() +
+                "  screentHeight= " + viewports.getValueAt(currentViewport).getScreenHeight());
+
+        Gdx.app.log(flag, "wordWidth= " + viewports.getValueAt(currentViewport).getWorldWidth() +
+                "  wordHeight= " + viewports.getValueAt(currentViewport).getWorldHeight());
+
+        Gdx.app.log(flag, "camera.x=" + camera.position.x + " camera.y="
+                + camera.position.y);
+
+        Gdx.app.log(flag, "screen x="+ viewports.getValueAt(currentViewport).getScreenX() + " y="+ viewports.getValueAt(currentViewport).getScreenY());
+
     }
 	
 }
