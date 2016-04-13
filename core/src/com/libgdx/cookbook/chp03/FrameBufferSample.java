@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.libgdx.cookbook.help.BaseScreen;
 
 /**
@@ -59,8 +60,7 @@ public class FrameBufferSample extends BaseScreen {
         time = 0.0f;
         state = GalleryState.PICTURE;
         
-        camera.position.set(SCENE_WIDTH * 0.5f, SCENE_HEIGHT * 0.5f, 0.0f);
-        camera.update();
+        viewport.apply(true);
     }
     
     @Override
@@ -68,6 +68,8 @@ public class FrameBufferSample extends BaseScreen {
         Gdx.gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         
+        viewport.update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        camera.update();
         batch.setProjectionMatrix(camera.combined);
         
         time += delta;
@@ -146,23 +148,23 @@ public class FrameBufferSample extends BaseScreen {
         }
     }
     
-    private void drawRegion(TextureRegion textureRegion) {
-        int width = textureRegion.getRegionWidth();
-        int height = textureRegion.getRegionHeight();
+    private void drawRegion(TextureRegion region) {
+        int width = region.getRegionWidth();
+        int height = region.getRegionHeight();
         
-        batch.draw(textureRegion,
+        batch.draw(region,
                    0.0f, 0.0f,
                    0.0f, 0.0f,
-                   width, height,
+                   VIRTUAL_WIDTH, height,
                    WORLD_TO_SCREEN, WORLD_TO_SCREEN,
                    0.0f);
     }
 
-    private void drawTexture(Texture colorBufferTexture) {
-        int width = colorBufferTexture.getWidth();
-        int height = colorBufferTexture.getHeight();
+    private void drawTexture(Texture texture) {
+        int width = texture.getWidth();
+        int height = texture.getHeight();
         
-        batch.draw(colorBufferTexture,
+        batch.draw(texture,
                 0.0f, 0.0f,
                 0.0f, 0.0f,
                 width, height,
@@ -171,18 +173,6 @@ public class FrameBufferSample extends BaseScreen {
                 0, 0,
                 width, height,
                 false, false);
-    }
-
-    @Override
-    public void resize(int width, int height) {
-        /**
-         * 从log可以看出 Gdx.graphics.getWidth() = width, 但是viewport.getScreenWidth与他们的值不一样
-         * 说明viewport是代表了scene(world)的大小
-         */
-        Gdx.app.log(TAG, "viewport size=(" + viewport.getScreenWidth() +" * " + viewport.getScreenHeight() + " )");
-        Gdx.app.log(TAG, "screen size=( " + Gdx.graphics.getWidth() +" * " + Gdx.graphics.getHeight() + " )");
-        Gdx.app.log(TAG, "resize size=( " + width +" * " + height + " )");
-        viewport.update(width, height);
     }
     
     @Override
