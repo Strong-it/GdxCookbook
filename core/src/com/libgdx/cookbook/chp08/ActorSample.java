@@ -2,13 +2,20 @@ package com.libgdx.cookbook.chp08;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.InputMultiplexer;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Event;
+import com.badlogic.gdx.scenes.scene2d.EventListener;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.utils.Disposable;
@@ -29,7 +36,11 @@ public class ActorSample extends BaseScreen {
         viewport = new FitViewport(SCENE_WIDTH, SCENE_HEIGHT);
         batch = new SpriteBatch();
         stage = new Stage(viewport, batch);
-        Gdx.input.setInputProcessor(this);
+        InputMultiplexer multiplexer = new InputMultiplexer();
+        multiplexer.addProcessor(this);
+        multiplexer.addProcessor(stage);
+        Gdx.input.setInputProcessor(multiplexer);
+//        Gdx.input.setInputProcessor(stage);
 
         myactor = new MyActor();
 
@@ -70,7 +81,7 @@ public class ActorSample extends BaseScreen {
 
     @Override
     public void resize(int width, int height) {
-        viewport.update(width, height);
+        viewport.update(width, height, true);
     }
 
     @Override
@@ -82,7 +93,7 @@ public class ActorSample extends BaseScreen {
     
     @Override
     public boolean keyDown(int keycode) {
-switch(keycode) {
+        switch(keycode) {
         
         case Keys.NUM_1:
             Gdx.app.log(TAG, "RotateBy Action");
@@ -200,11 +211,39 @@ switch(keycode) {
 
     public class MyActor extends Actor implements Disposable {
         TextureRegion region =  new TextureRegion( new Texture(Gdx.files.internal("data/scene2d/myactor.png")) );
+        Vector2 touchPostion;
         
         public MyActor() {
             setPosition(SCENE_WIDTH * 0.5f, SCENE_HEIGHT * 0.5f);
             setWidth(1.61f);
             setHeight(0.58f);
+            
+            touchPostion = new Vector2(-1.0f, -1.0f);
+            
+//            前2个参数要是修改了就重新设置了actor的位置
+//            setBounds(getX(), getY(), getWidth(), getHeight());
+            
+            addListener(new EventListener() {
+                
+                @Override
+                public boolean handle(Event event) {
+                    Gdx.app.log(TAG, "handle");
+                    return false;
+                }
+            });
+            
+            /***
+             * 如果设置了InputMultiplexer，那么像touchDown这样的函数只能有一个触发响应
+            addListener(new InputListener() {
+
+                @Override
+                public boolean touchDown(InputEvent event, float x, float y,
+                        int pointer, int button) {
+                    Gdx.app.log(TAG, "touchDown");
+                    return super.touchDown(event, x, y, pointer, button);
+                }
+                
+            });*/
         }
         
         @Override
@@ -215,6 +254,24 @@ switch(keycode) {
                         getWidth(), getHeight(), getScaleX(), getScaleY(), getRotation());
         }
 
+        /*
+        @Override
+        public void act(float delta) {
+            // 得加上这句话，都则Actions不执行
+            super.act(delta);
+            if (Gdx.input.justTouched()) {
+                touchPostion.set(Gdx.input.getX(), Gdx.input.getY());
+                Gdx.app.log(TAG, "x1=" + touchPostion.x + "  y=" + touchPostion.y);
+                // 将screen坐标转换为stage坐标，其实也是world坐标
+                stage.screenToStageCoordinates(touchPostion);
+                Gdx.app.log(TAG, "x1=" + touchPostion.x + "  y=" + touchPostion.y);
+            }
+            Actor actor = stage.hit(touchPostion.x, touchPostion.y, true);
+            if (actor instanceof MyActor) {
+                Gdx.app.log(TAG, "click me");
+                touchPostion.set(-1.0f, -1.0f);  // 触发完事件要重新设值
+            }
+        }*/
 
         @Override
         public void dispose() {

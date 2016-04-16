@@ -57,7 +57,7 @@ public class AnimatedSpriteSample extends BaseScreen {
        Array<AtlasRegion> dinosaurRegions = new Array<AtlasRegion>(dinosaurAtlas.getRegions());
        dinosaurRegions.sort(new RegionComparator());
        
-       cavemanWalk = new Animation(FRAME_DURATION, cavemanRegions, PlayMode.LOOP);
+       cavemanWalk = new Animation(FRAME_DURATION, cavemanRegions, PlayMode.NORMAL);
        dinosaurWalk = new Animation(FRAME_DURATION, dinosaurRegions, PlayMode.LOOP);
     }
     
