@@ -93,8 +93,12 @@ public class ViewportSample extends BaseScreen {
     public void resize(int width, int height) {
         viewports.getValueAt(currentViewport).update(width, height);
         /**
-         * 通过log发现StretchViewport变的只有viewport，world size没有发生变化
-         * 其余的viewport 和 world size都会发生变化
+         * 通过log发现ScalingViewport变的只有viewport，world size没有发生变化
+         * 通过源码可以看出update函数只是重新获取screenWidth，然后来重新计算缩放比例
+         * 
+         * ScreenViewport和ExtendViewport的viewport 和 world size都会发生变化
+         * 源码发现都会重新调用setWorldSize
+         * 
          */
         getTextLog("resize");
     }

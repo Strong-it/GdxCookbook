@@ -44,7 +44,8 @@ public class FrameBufferSample extends BaseScreen {
     @Override
     public void show() {
         camera = new OrthographicCamera();
-        viewport = new FitViewport(SCENE_WIDTH, SCENE_HEIGHT, camera);
+//        viewport = new FitViewport(SCENE_WIDTH, SCENE_HEIGHT, camera);
+        viewport = new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, camera);
         batch = new SpriteBatch();
         
         gallery = new TextureRegion[GALLERY_NUM_PICTURES];
@@ -68,8 +69,6 @@ public class FrameBufferSample extends BaseScreen {
         Gdx.gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         
-        viewport.update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        camera.update();
         batch.setProjectionMatrix(camera.combined);
         
         time += delta;
@@ -152,27 +151,29 @@ public class FrameBufferSample extends BaseScreen {
         int width = region.getRegionWidth();
         int height = region.getRegionHeight();
         
-        batch.draw(region,
-                   0.0f, 0.0f,
-                   0.0f, 0.0f,
-                   VIRTUAL_WIDTH, height,
-                   WORLD_TO_SCREEN, WORLD_TO_SCREEN,
-                   0.0f);
+//        batch.draw(region,
+//                   0.0f, 0.0f,
+//                   0.0f, 0.0f,
+//                   VIRTUAL_WIDTH, height,
+//                   WORLD_TO_SCREEN, WORLD_TO_SCREEN,
+//                   0.0f);
+        batch.draw(region, 0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
     }
 
     private void drawTexture(Texture texture) {
         int width = texture.getWidth();
         int height = texture.getHeight();
         
-        batch.draw(texture,
-                0.0f, 0.0f,
-                0.0f, 0.0f,
-                width, height,
-                WORLD_TO_SCREEN, WORLD_TO_SCREEN,
-                0.0f,
-                0, 0,
-                width, height,
-                false, false);
+//        batch.draw(texture,
+//                0.0f, 0.0f,
+//                0.0f, 0.0f,
+//                width, height,
+//                WORLD_TO_SCREEN, WORLD_TO_SCREEN,
+//                0.0f,
+//                0, 0,
+//                width, height,
+//                false, false);
+        batch.draw(texture, 0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
     }
     
     @Override
@@ -186,4 +187,10 @@ public class FrameBufferSample extends BaseScreen {
         currentFrameBuffer.dispose();
         nextFrameBuffer.dispose();
     }
+
+    @Override
+    public void resize(int width, int height) {
+        viewport.update(width, height, true);
+    }
+    
 }
