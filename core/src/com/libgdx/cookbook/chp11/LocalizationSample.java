@@ -4,7 +4,6 @@ import java.util.Locale;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -92,9 +91,7 @@ public class LocalizationSample extends BaseScreen {
         font.draw(batch, body, textXOrigin, point.y, textWidth, Align.left, true);
         batch.end();
         
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
 
     @Override

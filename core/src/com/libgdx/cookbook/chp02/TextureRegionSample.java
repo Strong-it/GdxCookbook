@@ -1,7 +1,6 @@
 package com.libgdx.cookbook.chp02;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -48,9 +47,7 @@ public class TextureRegionSample extends BaseScreen {
         batch.draw(region4, 320, 240-128-5, 128, 128);
         batch.end();
         
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
 
     @Override

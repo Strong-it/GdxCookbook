@@ -1,4 +1,4 @@
-package com.libgdx.cookbook.help;
+package com.libgdx.cookbook.chp08;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.libgdx.cookbook.help.BaseScreen;
 
 public class LabelScaleSample extends BaseScreen {
 
@@ -45,9 +46,7 @@ public class LabelScaleSample extends BaseScreen {
         stage.act(Math.min(Gdx.graphics.getDeltaTime(), 1 / 30f));
         stage.draw();
         
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
 
     @Override

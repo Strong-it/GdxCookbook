@@ -1,7 +1,6 @@
 package com.libgdx.cookbook.chp06;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -67,9 +66,7 @@ public class DistanceFieldFontSample extends BaseScreen {
         distanceFont.draw(batch, "Distance field fonts!", 20.0f, VIRTUAL_HEIGHT - 250.0f);
         batch.end();
         
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
 
     @Override

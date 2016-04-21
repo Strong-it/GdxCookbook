@@ -1,7 +1,6 @@
 package com.libgdx.cookbook.chp04;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -72,9 +71,7 @@ public class InputMappingSample extends BaseScreen implements
         
         batch.end();
         
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
 
     @Override

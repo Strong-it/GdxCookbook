@@ -1,7 +1,6 @@
 package com.libgdx.cookbook.chp05;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.files.FileHandle;
 import com.libgdx.cookbook.help.BaseScreen;
 
@@ -114,9 +113,7 @@ public class FileHandlingSample extends BaseScreen {
 
     @Override
     public void render(float delta) {
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
 
 }

@@ -127,9 +127,7 @@ public class CustomLoaderSample extends BaseScreen {
             batch.end();
         }
         
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
 
     @Override

@@ -3,7 +3,6 @@ package com.libgdx.cookbook.chp08;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
-import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -14,8 +13,6 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.EventListener;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.utils.Disposable;
@@ -74,9 +71,7 @@ public class ActorSample extends BaseScreen {
         stage.act(delta);
         stage.draw();
         
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
 
     @Override
@@ -276,6 +271,13 @@ public class ActorSample extends BaseScreen {
         @Override
         public void dispose() {
             region.getTexture().dispose();
+        }
+
+        @Override
+        public Actor hit(float x, float y, boolean touchable) {
+//            传递的是World坐标系
+//            Gdx.app.log(TAG, "hit (x,y)=(" + x + ", " + y +")");
+            return super.hit(x, y, touchable);
         }
         
     }

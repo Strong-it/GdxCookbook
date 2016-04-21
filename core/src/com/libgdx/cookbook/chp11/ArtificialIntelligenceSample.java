@@ -28,9 +28,7 @@ public class ArtificialIntelligenceSample extends BaseScreen {
         caveman.update(Gdx.graphics.getDeltaTime());
         dinosaur.update(Gdx.graphics.getDeltaTime());
         
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
 
 }

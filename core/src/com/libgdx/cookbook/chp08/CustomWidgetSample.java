@@ -1,7 +1,6 @@
 package com.libgdx.cookbook.chp08;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.TextureData.TextureDataType;
@@ -105,9 +104,7 @@ public class CustomWidgetSample extends BaseScreen {
         stage.act(Math.min(delta, 1 / 60f));
         stage.draw();
         
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
 
     @Override

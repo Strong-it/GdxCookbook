@@ -1,7 +1,6 @@
 package com.libgdx.cookbook.chp02;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -54,9 +53,7 @@ public class SpriteBatchTest1 extends BaseScreen {
 					1.0f, 1.0f, angle, 0, 0, width, height, false, false);
 		batch.end();
 		
-		 if (Gdx.input.isKeyJustPressed(Keys.B)) {
-	            goMainScreen();
-	        }
+		goBackMainScreen();
 	}
 
 	@Override

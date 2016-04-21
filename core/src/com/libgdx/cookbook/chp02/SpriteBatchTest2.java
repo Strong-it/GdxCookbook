@@ -1,12 +1,10 @@
 package com.libgdx.cookbook.chp02;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g3d.utils.FirstPersonCameraController;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.libgdx.cookbook.help.BaseScreen;
@@ -74,9 +72,7 @@ public class SpriteBatchTest2 extends BaseScreen {
 		batch.draw(img, 0.0f, 7.2f - height * WORLD_TO_SCREEN, width * WORLD_TO_SCREEN, height * WORLD_TO_SCREEN);
 		batch.end();
 		
-		 if (Gdx.input.isKeyJustPressed(Keys.B)) {
-	            goMainScreen();
-	        }
+		goBackMainScreen();
 	}
 
 	@Override

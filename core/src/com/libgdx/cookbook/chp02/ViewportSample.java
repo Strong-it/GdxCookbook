@@ -1,7 +1,6 @@
 package com.libgdx.cookbook.chp02;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -84,9 +83,7 @@ public class ViewportSample extends BaseScreen {
         font.draw(batch, viewports.getKeyAt(currentViewport), -360, 260);
         batch.end();
         
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
 
     @Override

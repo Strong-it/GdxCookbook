@@ -3,7 +3,6 @@ package com.libgdx.cookbook.chp05;
 import java.util.Scanner;
 
 import com.badlogic.gdx.Application.ApplicationType;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.math.MathUtils;
@@ -55,8 +54,6 @@ public class PreferencesSample extends BaseScreen {
 
     @Override
     public void render(float delta) {
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
 }

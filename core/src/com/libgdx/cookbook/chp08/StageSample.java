@@ -61,6 +61,7 @@ public class StageSample extends BaseScreen {
             myStage.draw();
         }
         
+        goBackMainScreen();
     }
 
     @Override
@@ -140,8 +141,6 @@ public class StageSample extends BaseScreen {
                 isVisible = false;
             } else if (keyCode == Keys.V && !isVisible) {
                 isVisible = true;
-            } else if (keyCode == Keys.B) {
-                goMainScreen();
             }
             return super.keyDown(keyCode);
         }

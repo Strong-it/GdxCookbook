@@ -1,7 +1,6 @@
 package com.libgdx.cookbook.chp02;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -105,9 +104,7 @@ public class TextureAtlasSample extends BaseScreen {
 		
 		batch.end();
 		
-		if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+		goBackMainScreen();
 	}
 
 	@Override
@@ -122,7 +119,4 @@ public class TextureAtlasSample extends BaseScreen {
 		atlas.dispose();
 	}
 
-	private void gotoScreen() {
-//		game.setScreen(new SpriteBatchSample(game));
-	}
 }

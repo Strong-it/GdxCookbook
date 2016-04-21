@@ -68,7 +68,9 @@ public abstract class BaseScreen extends InputAdapter implements Screen {
 	    this.game = game;
 	}
 	
-	public void goMainScreen() {
-	    game.setScreen(new MainMenuScreen(game));
+	public void goBackMainScreen() {
+	    if (Gdx.input.isKeyJustPressed(Keys.B)) {
+	        game.setScreen(new MainMenuScreen(game));
+        }
 	}
 }

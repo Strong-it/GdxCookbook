@@ -106,9 +106,7 @@ public class SpatialAudioSample extends BaseScreen {
         
         batch.end();
         
-        if (Gdx.input.isKeyJustPressed(Keys.B)) {
-            goMainScreen();
-        }
+        goBackMainScreen();
     }
     
     private void createSoundEmitters() {
