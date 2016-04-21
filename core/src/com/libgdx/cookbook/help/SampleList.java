@@ -44,6 +44,7 @@ import com.libgdx.cookbook.chp08.ActorSample;
 import com.libgdx.cookbook.chp08.CustomWidgetSample;
 import com.libgdx.cookbook.chp08.MainMenuSample;
 import com.libgdx.cookbook.chp08.SkinCustomizationSample;
+import com.libgdx.cookbook.chp08.StageSample;
 import com.libgdx.cookbook.chp08.WidgetsSample;
 import com.libgdx.cookbook.chp09.TiledMapObjectsSample;
 import com.libgdx.cookbook.chp09.TiledMapSample;
@@ -95,6 +96,8 @@ public class SampleList {
 	 				CustomLoaderSample.class,
 	 				GroupingAssetsSample.class,
 	 				ActorSample.class,
+	 				LabelScaleSample.class,
+	 				StageSample.class,
 	 				WidgetsSample.class,
 	 				MainMenuSample.class,
 	 				SkinCustomizationSample.class,

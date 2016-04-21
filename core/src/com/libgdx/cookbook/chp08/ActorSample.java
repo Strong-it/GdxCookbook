@@ -257,7 +257,7 @@ public class ActorSample extends BaseScreen {
         /*
         @Override
         public void act(float delta) {
-            // 得加上这句话，都则Actions不执行
+            // 得加上这句话，否则Actions不执行
             super.act(delta);
             if (Gdx.input.justTouched()) {
                 touchPostion.set(Gdx.input.getX(), Gdx.input.getY());
