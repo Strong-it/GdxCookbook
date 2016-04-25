@@ -45,6 +45,7 @@ import com.libgdx.cookbook.chp08.CustomWidgetSample;
 import com.libgdx.cookbook.chp08.GroupSample;
 import com.libgdx.cookbook.chp08.LabelScaleSample;
 import com.libgdx.cookbook.chp08.MainMenuSample;
+import com.libgdx.cookbook.chp08.PixmapSample;
 import com.libgdx.cookbook.chp08.SkinCustomizationSample;
 import com.libgdx.cookbook.chp08.StageSample;
 import com.libgdx.cookbook.chp08.WidgetsSample;
@@ -101,6 +102,7 @@ public class SampleList {
 	 				LabelScaleSample.class,
 	 				StageSample.class,
 	 				GroupSample.class,
+	 				PixmapSample.class,
 	 				WidgetsSample.class,
 	 				MainMenuSample.class,
 	 				SkinCustomizationSample.class,
