@@ -13,7 +13,7 @@ public class Caveman implements Telegraph {
 
     private static final String TAG = "Caveman";
 
-    private StateMachine<Caveman> fsm;
+    private StateMachine<Caveman, CavemanState> fsm;
     private float hungry; // [0-100]
     private float energy; // [0-100]
     private float food; // [20-100] - pending to eat
@@ -270,7 +270,7 @@ public class Caveman implements Telegraph {
     }
 
     public Caveman() {
-        fsm = new DefaultStateMachine<Caveman> (this, CavemanState.IDLE);
+        fsm = new DefaultStateMachine<Caveman, CavemanState> (this, CavemanState.IDLE);
         
         hungry = MathUtils.random(0, 100);
         energy = MathUtils.random(0, 100);
@@ -279,7 +279,7 @@ public class Caveman implements Telegraph {
         fsm.setGlobalState(CavemanState.GLOBAL_STATE);
     }
     
-    public StateMachine<Caveman> getFSM() {
+    public StateMachine<Caveman, CavemanState> getFSM() {
         return fsm;
     }
     

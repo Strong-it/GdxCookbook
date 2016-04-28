@@ -15,7 +15,7 @@ public class Dinosaur implements Telegraph {
 
 private static final String TAG = "Dinosaur";
     
-    private StateMachine<Dinosaur> fsm;
+    private StateMachine<Dinosaur, DinosaurState> fsm;
     private float energy;
     private Caveman caveman;
     
@@ -115,12 +115,12 @@ private static final String TAG = "Dinosaur";
     }
     
     public Dinosaur(Caveman caveman) {
-        fsm = new DefaultStateMachine<Dinosaur> (this, DinosaurState.HOME);
+        fsm = new DefaultStateMachine<Dinosaur, DinosaurState> (this, DinosaurState.HOME);
         energy = MathUtils.random(0, 100);
         this.caveman = caveman;
     }
     
-    public StateMachine<Dinosaur> getFSM() {
+    public StateMachine<Dinosaur, DinosaurState> getFSM() {
         return fsm;
     }
     
