@@ -54,6 +54,7 @@ import com.libgdx.cookbook.chp09.TiledMapSample;
 import com.libgdx.cookbook.chp10.Box2DComplexShapesSample;
 import com.libgdx.cookbook.chp10.Box2DSimpleSample;
 import com.libgdx.cookbook.chp10.Box2dTest;
+import com.libgdx.cookbook.chp10.Box2dTest2;
 import com.libgdx.cookbook.chp11.ArtificialIntelligenceSample;
 import com.libgdx.cookbook.chp11.LocalizationSample;
 
@@ -114,7 +115,8 @@ public class SampleList {
 	 				ArtificialIntelligenceSample.class,
 	 				Box2DSimpleSample.class,
 	 				Box2DComplexShapesSample.class,
-	 				Box2dTest.class
+	 				Box2dTest.class,
+	 				Box2dTest2.class
 	 				));
 	
 	public List<String> getNames() {
