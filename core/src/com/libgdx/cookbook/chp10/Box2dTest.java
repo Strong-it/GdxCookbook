@@ -24,12 +24,13 @@ import com.libgdx.cookbook.help.BaseScreen;
 public class Box2dTest extends BaseScreen {
 
 	SpriteBatch batch;
-	Sprite sprite;
+//	Sprite sprite;
 	Texture img;
 	World world;
 	Body body;
 	
 	Box2DDebugRenderer box2dRender;
+	Vector2 position;
 	
 	@Override
 	public void show() {
@@ -39,21 +40,24 @@ public class Box2dTest extends BaseScreen {
 		
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
-		sprite = new Sprite(img);
+//		sprite = new Sprite(img);
 		
-		sprite.setX(Gdx.graphics.getWidth() / 2 - sprite.getWidth() / 2);
-		sprite.setY(Gdx.graphics.getHeight()  - sprite.getHeight());
+//		sprite.setX(Gdx.graphics.getWidth() / 2 - sprite.getWidth() / 2);
+//		sprite.setY(Gdx.graphics.getHeight()  - sprite.getHeight());
 		
 		world = new World(new Vector2(0, -9.8f), true);
 		
 		BodyDef bodyDef = new BodyDef();
 		bodyDef.type = BodyType.DynamicBody;
-		bodyDef.position.set(sprite.getX() + sprite.getWidth() / 2, sprite.getY() + sprite.getHeight() / 2);
+//		bodyDef.position.set(sprite.getX() + sprite.getWidth() / 2, sprite.getY() + sprite.getHeight() / 2);
+		bodyDef.position.set(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() /2);
 		
 		body = world.createBody(bodyDef);
+		body.setUserData(img);
 		
 		PolygonShape shape = new PolygonShape();
-		shape.setAsBox(sprite.getWidth() / 2, sprite.getHeight() / 2);
+//		shape.setAsBox(sprite.getWidth() / 2, sprite.getHeight() / 2);
+		shape.setAsBox(img.getWidth() / 2, img.getHeight() / 2);
 		
 		/**
 		 ** 夹具 定义了Body的各种物理属性
@@ -83,21 +87,24 @@ public class Box2dTest extends BaseScreen {
 		box2dRender = new Box2DDebugRenderer();
 		
 		createGround();
+		position = new Vector2();
 	}
 
 	@Override
 	public void render(float delta) {
 		world.step(Gdx.graphics.getDeltaTime(), 6, 2);
-		sprite.setPosition(body.getPosition().x, body.getPosition().y);
+//		sprite.setPosition(body.getPosition().x, body.getPosition().y);
 		
 		Gdx.gl.glClearColor(0.39f, 0.58f, 0.92f, 1.0f);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 		batch.setProjectionMatrix(camera.combined);
 		world.step(Gdx.graphics.getDeltaTime(), 6, 2);
-		sprite.setPosition(body.getPosition().x - sprite.getWidth() / 2, body.getPosition().y - sprite.getHeight() / 2);
+		position= body.getPosition();
+//		sprite.setPosition(body.getPosition().x - sprite.getWidth() / 2, body.getPosition().y - sprite.getHeight() / 2);
 		batch.begin();
-		batch.draw(sprite, sprite.getX(), sprite.getY());
+//		batch.draw(sprite, sprite.getX(), sprite.getY());
+		batch.draw(img, position.x - img.getWidth() / 2, position.y - img.getHeight() / 2);
 		batch.end();
 		
 		box2dRender.render(world, camera.combined);
